@@ -132,10 +132,11 @@ body {
 
 .upcoming-words {
     background-color: #FFF;
-    margin: 15px;
+    margin: 15px 0;
     padding: 15px;
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     justify-content: center;
 }
 
