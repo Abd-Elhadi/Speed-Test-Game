@@ -47,7 +47,7 @@ body {
 }
 
 .message span::before {
-    content: '[ ';
+    content: '[';
 }
 
 .message span::after {
