@@ -1,35 +1,35 @@
 // array of words
 const words = [
     "Hello",
-    "Programming",
+    // "Programming",
     "Code",
-    "Javascript",
-    "Town",
-    "Country",
-    "Testing",
-    "Youtube",
-    "Linkedin",
-    "Twitter",
-    "Github",
-    "Leetcode",
-    "Internet",
-    "Python",
-    "Scala",
-    "Destructuring",
-    "Paradigm",
-    "Styling",
-    "Cascade",
-    "Documentation",
-    "Coding",
-    "Funny",
-    "Working",
-    "Dependencies",
-    "Task",
-    "Runner",
-    "Roles",
-    "Test",
-    "Rust",
-    "Playing"
+    // "Javascript",
+    // "Town",
+    // "Country",
+    // "Testing",
+    // "Youtube",
+    // "Linkedin",
+    // "Twitter",
+    // "Github",
+    // "Leetcode",
+    // "Internet",
+    // "Python",
+    // "Scala",
+    // "Destructuring",
+    // "Paradigm",
+    // "Styling",
+    // "Cascade",
+    // "Documentation",
+    // "Coding",
+    // "Funny",
+    // "Working",
+    // "Dependencies",
+    // "Task",
+    // "Runner",
+    // "Roles",
+    // "Test",
+    // "Rust",
+    // "Playing"
 ];
 
 // set the levels
@@ -38,10 +38,6 @@ const levels = {
     'Medium': 3,
     'Hard': 2,
 };
-
-// default level
-let defaultLevelName = 'Medium';
-let defaultLevelSeconds = levels[defaultLevelName];
 
 // get selectors
 let startButton = document.querySelector('.start');
@@ -54,6 +50,22 @@ let timeLeftSpan = document.querySelector('.time span');
 let scoreGot = document.querySelector('.score .got');
 let scoreTotal = document.querySelector('.score .total');
 let finishMessage = document.querySelector('.finish');
+let levelOption = document.querySelector('.message select');
+
+let defaultLevelName = 'Easy';
+let defaultLevelSeconds = levels[defaultLevelName];
+
+levelOption.addEventListener('change', e => {
+    let level = e.target.value;
+    // capitalize the first letter
+    level = level.charAt(0).toUpperCase() + level.slice(1);
+    defaultLevelName = level;
+    defaultLevelSeconds = levels[defaultLevelName];
+    // update level name and seconds
+    lelevelNameSpan.innerHTML = level;
+    secondsSpan.innerHTML = defaultLevelSeconds;
+    timeLeftSpan.innerHTML = defaultLevelSeconds;
+});
 
 // set level name, seconds and score
 lelevelNameSpan.innerHTML = defaultLevelName;
